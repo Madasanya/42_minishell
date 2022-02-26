@@ -123,7 +123,7 @@ int	ft_lexor(void)
 	}
 	if (flag == -1)
 		ft_free_linked_list(&g_access.lexor2parser, FT_LIST_TYPE_WORD, 1);
-	else if (!is_space(g_access.read_line2lexor[i - 1]) && i > 0)
+	else if (i > 0 && !is_space(g_access.read_line2lexor[i - 1]))
 		ft_lex_string_reminder_handler(&current_str, \
 			g_access.read_line2lexor, start, i);
 	ft_smart_free((void **)&g_access.read_line2lexor);

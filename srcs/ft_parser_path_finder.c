@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_path_finder.c                                   :+:      :+:    :+:   */
+/*   ft_parser_path_finder.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbanfi <dbanfi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 21:57:51 by mamuller          #+#    #+#             */
-/*   Updated: 2022/02/26 16:42:56 by dbanfi           ###   ########.fr       */
+/*   Updated: 2022/02/27 18:36:09 by mamuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	path_finder(char *str, char **cmd_path)
 	}
 	write(2, "minishell: ", 12);
 	write(2, str, ft_strlen(str));
-	write(2, ": No such file or directory\n", 28);
+	write(2, ": command not found\n", 20);
 	ft_smart_free((void **)&(g_access.last_return));
 	g_access.last_return = ft_itoa(127);
 	return (-1);
