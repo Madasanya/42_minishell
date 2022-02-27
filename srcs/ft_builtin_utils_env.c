@@ -99,16 +99,22 @@ void	ft_update_create_env(char *env, char *value, pid_t pid)
 	@brief Prints the correct error message according to calling function.
 	@param mes_type Type of calling function for error message.
 	@param args_word String to be checked.
+	@param pid Process Id.
 	@return None.
  */
-static void	ft_env_name_check_error_print(int mes_type, char *args_word)
+static void	ft_env_name_check_error_print(int mes_type, char *args_word, \
+	pid_t pid)
 {
-	if (mes_type == FT_EXPORT_MES_TYPE)
-		write(2, "minishell: export: `", 20);
-	else if (mes_type == FT_UNSET_MES_TYPE)
-		write(2, "minishell: unset: `", 19);
-	write(2, args_word, ft_strlen(args_word));
-	write(2, "': not a valid identifier\n", 26);
+	if (pid == 0)
+	{
+		if (mes_type == FT_EXPORT_MES_TYPE)
+			write(2, "minishell: export: `", 20);
+		else if (mes_type == FT_UNSET_MES_TYPE)
+			write(2, "minishell: unset: `", 19);
+		write(2, args_word, ft_strlen(args_word));
+		write(2, "': not a valid identifier\n", 26);
+	}
+	ft_set_lasts(NULL, 0, 1, FT_LAST_RETURN_MODE);
 }
 
 /**
@@ -117,7 +123,8 @@ static void	ft_env_name_check_error_print(int mes_type, char *args_word)
 	@param valid Validity check flag of args_word.
 	@param pid Proccess id.
 	@param mes_type Type of calling function for error message.
-	@return None.
+	@return Returns the index where the argument will be split into
+		key:value pair.
  */
 int	ft_env_name_check(char *args_word, int *valid, pid_t pid, int mes_type)
 {
@@ -134,12 +141,14 @@ int	ft_env_name_check(char *args_word, int *valid, pid_t pid, int mes_type)
 		else
 		{
 			*valid = 0;
-			if (pid == 0)
-				ft_env_name_check_error_print(mes_type, args_word);
-			ft_set_lasts(NULL, 0, 1, FT_LAST_RETURN_MODE);
+			ft_env_name_check_error_print(mes_type, args_word, pid);
 			break ;
-			j++;
 		}
+	}
+	if (args_word[0] == '=')
+	{
+		*valid = 0;
+		ft_env_name_check_error_print(mes_type, args_word, pid);
 	}
 	return (j);
 }

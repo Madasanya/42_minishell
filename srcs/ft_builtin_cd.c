@@ -6,7 +6,7 @@
 /*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 21:26:00 by mamuller          #+#    #+#             */
-/*   Updated: 2022/02/27 14:34:12 by mamuller         ###   ########.fr       */
+/*   Updated: 2022/02/28 12:06:44 by mamuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,8 @@ static int	ft_cd_open_dir_checker(char *abs_path, int pid, char **args)
 		{
 			write(2, "minishell: cd: ", 15);
 			write(2, args[1], ft_strlen(args[1]));
-			perror(" ");
+			write(2, ": ", 2);
+			perror("");
 		}
 		ft_smart_free((void **)&abs_path);
 		ft_set_lasts(args, pid, 1, FT_LAST_FULL_MODE);
@@ -133,7 +134,7 @@ int	minishell_cd(char **args, pid_t pid)
 	if (args[1] == NULL)
 	{
 		if (pid == 0)
-			write(2, "minishell: cd without an argument not permitted.\n", 49);
+			write(2, "minishell: cd: no argument is not permitted\n", 44);
 		ft_set_lasts(args, pid, 1, FT_LAST_FULL_MODE);
 		return (1);
 	}

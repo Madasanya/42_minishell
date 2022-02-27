@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_signal_handler.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbanfi <dbanfi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 15:24:38 by dbanfi            #+#    #+#             */
-/*   Updated: 2022/02/26 15:24:39 by dbanfi           ###   ########.fr       */
+/*   Updated: 2022/02/28 13:44:42 by mamuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 		Called on Ctrl+C. (Works properly on linux.)
 	@param sig: Signal number.
 	@return None.
-	@exception Insert "rl_replace_line("", 0);" on line 21 to make it work
+	@exception Insert "rl_replace_line("", 0);" on line 29 to make it work
 		properly.Aveliable only with linux readline library
 */
 static void	ft_sigint_handler(int sig)
