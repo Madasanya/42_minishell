@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
 
 /**
 	@brief Puts copied node in correct place in copied env var list. 

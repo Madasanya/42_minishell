@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
+#include "../inc_priv/ft_builtin_private.h"
 
 /**
 	@brief Removes env var if it is the first node
@@ -130,7 +131,7 @@ int	minishell_unset(char **args, pid_t pid)
 	while (i < len)
 	{
 		ptr = g_access.env;
-		ft_env_name_check(args[i], &valid, pid, FT_UNSET_MES_TYPE);
+		ft_env_name_check(args[i], &valid, pid, FT_UNSET_MSG_TYPE);
 		if (!ft_strncmp(args[i], "PWD", ft_strlen(args[i])))
 			ft_smart_free((void **)&(g_access.pwd));
 		if (!ft_unset_first_node(ptr, args, i, valid))

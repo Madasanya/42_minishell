@@ -1,6 +1,6 @@
 CC			= gcc
 CFLAGS		= -g3 -Wall -Wextra -Werror
-RM			= rm -f
+RM			= rm -rf
 SRCD		= ./srcs/
 
 
@@ -9,8 +9,8 @@ UNAME = $(shell uname)
 
 ifeq ($(UNAME), Linux)
 
-SRC			=	ft_builtin_cd.c ft_builtin_echo.c ft_builtin_env.c ft_builtin_exit.c ft_builtin_exit_utils.c ft_builtin_export.c \
-				ft_builtin_export_utils.c ft_builtin_pwd.c ft_builtin_unset.c ft_builtin_utils.c ft_builtin_utils_env.c \
+SRC			=	builtin/src/ft_builtin_cd.c builtin/src/ft_builtin_echo.c builtin/src/ft_builtin_env.c builtin/src/ft_builtin_exit.c builtin/src/ft_builtin_exit_utils.c builtin/src/ft_builtin_export.c \
+				builtin/src/ft_builtin_export_utils.c builtin/src/ft_builtin_pwd.c builtin/src/ft_builtin_unset.c builtin/src/ft_builtin_utils.c builtin/src/ft_builtin_env_utils.c \
 				ft_check_path_env_linux.c ft_check_symlink.c ft_lexor_env_check.c ft_executor.c ft_free_linked_list.c \
 				ft_globlal_fun.c ft_heredoc.c ft_heredoc_utils.c ft_initiator_utils.c ft_initiator.c ft_lexor.c ft_lexor_handlers.c \
 				ft_lexor_utils.c ft_lexor_utils2.c ft_parser.c ft_parser_handler.c ft_parser_utils.c ft_parser_path_finder.c ft_pipex.c \
@@ -20,8 +20,8 @@ SRC			=	ft_builtin_cd.c ft_builtin_echo.c ft_builtin_env.c ft_builtin_exit.c ft_
 endif
 
 ifeq ($(UNAME), Darwin)
-SRC			=	ft_builtin_cd.c ft_builtin_echo.c ft_builtin_env.c ft_builtin_exit.c ft_builtin_exit_utils.c ft_builtin_export.c \
-				ft_builtin_export_utils.c ft_builtin_pwd.c ft_builtin_unset.c ft_builtin_utils.c ft_builtin_utils_env.c \
+SRC			=	builtin/src/ft_builtin_cd.c builtin/src/ft_builtin_echo.c builtin/src/ft_builtin_env.c builtin/src/ft_builtin_exit.c builtin/src/ft_builtin_exit_utils.c builtin/src/ft_builtin_export.c \
+				builtin/src/ft_builtin_export_utils.c builtin/src/ft_builtin_pwd.c builtin/src/ft_builtin_unset.c builtin/src/ft_builtin_utils.c builtin/src/ft_builtin_utils_env.c \
 				ft_check_path_env_mac.c ft_check_symlink.c ft_lexor_env_check.c ft_executor.c ft_free_linked_list.c\
 				ft_globlal_fun.c ft_heredoc.c ft_heredoc_utils.c ft_initiator_utils.c ft_initiator.c ft_lexor.c ft_lexor_handlers.c \
 				ft_lexor_utils.c ft_lexor_utils2.c ft_parser.c ft_parser_handler.c ft_parser_utils.c ft_parser_path_finder.c ft_pipex.c \
@@ -32,7 +32,7 @@ endif
 
 # Command to add the source folder prefix (instead of having it added manually to SRC)
 SRCF		= $(addprefix $(SRCD),$(SRC))
-OBJD		= ./objs/
+OBJD		= ./obj/
 # for every SRCF file which is an .c file an o file will be created according to the implicit rule (see $(OBJD)%.o: $(SRCD)%.c)
 OBJF		= $(SRCF:$(SRCD)%.c=$(OBJD)%.o)
 BUILD		= $(OBJF:$(OBJD)%.o)
@@ -55,7 +55,7 @@ LIBFT_MAKE    = make -C ${LIBFTD}
 #directory is available, then create it according to the following rules:
 #Note: the object directory will only be created if not existing already. -p flag throws no errors when already there
 $(OBJD)%.o: $(SRCD)%.c
-	@mkdir -p $(OBJD)
+	@mkdir -p $(OBJD)/builtin/src
 	$(CC) $(CFLAGS) -I ${HEADD} -c -o $@ $<
 
 # $(NAME):	${OBJF}
@@ -72,7 +72,7 @@ libftmake:
 			${LIBFT_MAKE}
 
 clean:
-			${RM} ${OBJD}*.o
+			${RM} ${OBJD}
 			make -C ${LIBFTD} clean
 
 fclean:		clean

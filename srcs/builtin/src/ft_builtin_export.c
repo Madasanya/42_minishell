@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
+#include "../inc_priv/ft_builtin_private.h"
 
 /**
 	@brief Handels sorting and printing content of env var list.
@@ -115,7 +116,7 @@ int	minishell_export(char **args, pid_t pid)
 	i = 1;
 	while (i < len)
 	{
-		j = ft_env_name_check(args[i], &valid, pid, FT_EXPORT_MES_TYPE);
+		j = ft_env_name_check(args[i], &valid, pid, FT_EXPORT_MSG_TYPE);
 		ft_export_add_env(args, i, j, valid);
 		i++;
 	}

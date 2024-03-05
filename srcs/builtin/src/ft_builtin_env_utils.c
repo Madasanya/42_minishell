@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
+#include "../inc_priv/ft_builtin_private.h"
 
 /**
 	@brief Finds the value of env var
@@ -107,9 +108,9 @@ static void	ft_env_name_check_error_print(int mes_type, char *args_word, \
 {
 	if (pid == 0)
 	{
-		if (mes_type == FT_EXPORT_MES_TYPE)
+		if (mes_type == FT_EXPORT_MSG_TYPE)
 			write(2, "minishell: export: `", 20);
-		else if (mes_type == FT_UNSET_MES_TYPE)
+		else if (mes_type == FT_UNSET_MSG_TYPE)
 			write(2, "minishell: unset: `", 19);
 		write(2, args_word, ft_strlen(args_word));
 		write(2, "': not a valid identifier\n", 26);

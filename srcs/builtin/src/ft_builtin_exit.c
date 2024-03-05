@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
+#include "../inc_priv/ft_builtin_private.h"
 
 /**
 	@brief Handels exit function called in pipeline. Errors are not printed.

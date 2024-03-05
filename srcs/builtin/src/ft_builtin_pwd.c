@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
+#include "../inc_priv/ft_builtin_private.h"
 
 /**
 	@brief Builtin command: pwd. Prints current working directory.
