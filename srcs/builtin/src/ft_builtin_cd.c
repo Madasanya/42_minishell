@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_builtin_cd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
+/*   By: maggi <maggi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 21:26:00 by mamuller          #+#    #+#             */
-/*   Updated: 2022/02/28 12:06:44 by mamuller         ###   ########.fr       */
+/*   Updated: 2024/03/20 21:39:14 by maggi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/minishell.h"
 #include "../inc_priv/ft_builtin_private.h"
+#include "../inc_pub/ft_builtin.h"
 
 /**
 	@brief Handels updating env var list and current dir change.

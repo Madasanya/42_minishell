@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lexor_utils2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
+/*   By: maggi <maggi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 21:17:43 by mamuller          #+#    #+#             */
-/*   Updated: 2022/02/22 11:05:21 by mamuller         ###   ########.fr       */
+/*   Updated: 2024/03/20 21:18:26 by maggi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
+#include "../inc_priv/ft_lexor_private.h"
 
 /**
 	@brief Adds new node with input string and special char string type to 

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lexor_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
+/*   By: maggi <maggi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 21:06:42 by mamuller          #+#    #+#             */
-/*   Updated: 2022/02/22 11:04:11 by mamuller         ###   ########.fr       */
+/*   Updated: 2024/03/20 21:20:46 by maggi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
 
 /**
 	@brief Concatenates one string to another.

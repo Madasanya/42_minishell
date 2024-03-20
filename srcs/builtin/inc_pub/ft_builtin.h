@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_builtin.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
+/*   By: maggi <maggi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 14:35:01 by mamuller          #+#    #+#             */
-/*   Updated: 2024/03/05 21:35:01 by mamuller         ###   ########.fr       */
+/*   Updated: 2024/03/20 21:40:19 by maggi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 # define FT_BUILTIN_H
 
 # include "../../../libft/incl/libft.h"
-// # include <stdio.h>
-// # include <unistd.h>
-// # include <stdlib.h>
-// # include <errno.h>
-// # include <string.h>
 
 /* ft_builtin_cd.c */
 
@@ -27,6 +22,11 @@ int		minishell_cd(char **args, pid_t pid);
 /* ft_builtin_echo.c */
 
 int		minishell_echo(char **args, pid_t pid);
+
+/* ft_builtin_env_utils.c */
+
+char	*env_value_finder(char *name);
+void	ft_update_env(char *to_search, char *to_replace);
 
 /* ft_builtin_env.c */
 
@@ -48,4 +48,4 @@ int		minishell_pwd(char **args, pid_t pid);
 
 int		minishell_unset(char **args, pid_t pid);
 
-#endif
+#endif /* FT_BUILTIN_H */

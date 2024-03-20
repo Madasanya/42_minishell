@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lexor_handlers.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
+/*   By: maggi <maggi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 11:10:40 by mamuller          #+#    #+#             */
-/*   Updated: 2022/02/22 11:33:04 by mamuller         ###   ########.fr       */
+/*   Updated: 2024/03/20 21:17:35 by maggi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
+#include "../inc_priv/ft_lexor_private.h"
 
 /**
 	 @brief Handling of substring.

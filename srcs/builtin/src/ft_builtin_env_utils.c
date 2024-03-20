@@ -12,6 +12,7 @@
 
 #include "../../../incl/minishell.h"
 #include "../inc_priv/ft_builtin_private.h"
+#include "../inc_pub/ft_builtin.h"
 
 /**
 	@brief Finds the value of env var
