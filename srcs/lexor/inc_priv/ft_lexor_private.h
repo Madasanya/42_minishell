@@ -6,7 +6,7 @@
 /*   By: maggi <maggi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 14:35:01 by mamuller          #+#    #+#             */
-/*   Updated: 2024/03/20 21:41:58 by maggi            ###   ########.fr       */
+/*   Updated: 2024/04/01 22:05:10 by maggi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,6 @@
 # define FT_LEXOR_PRIVATE_H
 
 # include "../../../libft/incl/libft.h"
-// # include <stdio.h>
-// # include <readline/readline.h>
-// # include <readline/history.h>
-// # include <unistd.h>
-// # include <stdlib.h>
-// # include <errno.h>
-// # include <string.h>
-// # include <sys/wait.h>
-// # include <stdarg.h>
-// # include <fcntl.h>
-// # include <sys/types.h>
-// # include <signal.h>
-// # include <dirent.h>
-// # include <sys/stat.h>
 
 # define FT_SPECIAL_CHAR_STRING 1
 # define FT_STRING 2

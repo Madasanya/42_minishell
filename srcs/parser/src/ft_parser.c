@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
+/*   By: maggi <maggi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 21:57:05 by mamuller          #+#    #+#             */
-/*   Updated: 2022/02/23 11:39:56 by mamuller         ###   ########.fr       */
+/*   Updated: 2024/04/02 23:38:50 by maggi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
+#include "../inc_priv/ft_parser_private.h"
 
 /**
 	@brief Adds new detected command to liked list that will be executed later.

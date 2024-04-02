@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_builtin_private.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
+/*   By: maggi <maggi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 14:35:01 by mamuller          #+#    #+#             */
-/*   Updated: 2024/03/05 21:35:01 by mamuller         ###   ########.fr       */
+/*   Updated: 2024/04/02 23:46:48 by maggi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 # define FT_UNSET_MSG_TYPE 0
 # define FT_EXPORT_MSG_TYPE 1
 
+# define FT_LAST_ARG_MODE 1
+# define FT_LAST_RETURN_MODE 2
+# define FT_LAST_FULL_MODE 3
+
 /* ft_builtin_env_utils.c */
 
-char	*env_value_finder(char *name);
-void	ft_update_env(char *to_search, char *to_replace);
 void	ft_update_create_env(char *env, char *value, pid_t pid);
 int		ft_env_name_check(char *args_word, int *valid, pid_t pid, int mes_type);
 

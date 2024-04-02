@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
+/*   By: maggi <maggi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 21:57:51 by mamuller          #+#    #+#             */
-/*   Updated: 2022/02/23 11:40:13 by mamuller         ###   ########.fr       */
+/*   Updated: 2024/04/02 23:31:05 by maggi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
+#include "../inc_priv/ft_parser_private.h"
 
 /**
 	@brief Creates new array which is one element longer than line.

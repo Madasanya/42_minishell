@@ -31,16 +31,6 @@
 # include <dirent.h>
 # include <sys/stat.h>
 
-# define FT_CMD_TYPE_ERROR -1
-# define FT_CMD_TYPE_SYSTEM 0
-# define FT_CMD_TYPE_BUILT_IN 1
-# define FT_CMD_TYPE_REDIRECT 2
-
-# define FT_LIST_TYPE_WORD 0
-# define FT_LIST_TYPE_COMMAND 1
-# define FT_LIST_TYPE_BUILTIN_CONTENT 2
-# define FT_LIST_TYPE_ENV_VAR 3
-
 # define BUFFER_SIZE 1
 
 # define OUT_WRITE 0
@@ -51,15 +41,15 @@
 # define SYMLINK 1
 # define NOT_SYMLINK 0
 
-# define PARSER_TABLE_LEN_LIMIT 1000
-# define PIPE_LIMIT 1000
+# define FT_LIST_TYPE_WORD 0
+# define FT_LIST_TYPE_COMMAND 1
+# define FT_LIST_TYPE_BUILTIN_CONTENT 2
+# define FT_LIST_TYPE_ENV_VAR 3
 
-# define FT_LAST_ARG_MODE 1
-# define FT_LAST_RETURN_MODE 2
-# define FT_LAST_FULL_MODE 3
-
-# define FT_UNSET_MES_TYPE 0
-# define FT_EXPORT_MES_TYPE 1
+# define FT_CMD_TYPE_ERROR -1
+# define FT_CMD_TYPE_SYSTEM 0
+# define FT_CMD_TYPE_BUILT_IN 1
+# define FT_CMD_TYPE_REDIRECT 2
 
 # define FT_ERROR_PIPEX_EXEC_FAIL "minishell: command execution failed"
 # define FT_ERROR_PIPEX_FD_DUP_FAIL "minishell: fd duplication failed"

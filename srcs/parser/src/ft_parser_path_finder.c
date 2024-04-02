@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser_path_finder.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
+/*   By: maggi <maggi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 21:57:51 by mamuller          #+#    #+#             */
-/*   Updated: 2022/02/28 12:01:24 by mamuller         ###   ########.fr       */
+/*   Updated: 2024/04/02 23:34:30 by maggi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
 
 /**
 	@brief Checks if the combination of path and executable is accessible
