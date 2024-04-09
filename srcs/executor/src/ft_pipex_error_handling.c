@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
+#include "../inc_priv/heredoc_private.h"
+#include "../inc_priv/pipex_private.h"
 
 /**
 	@brief Error handler that closes file desriptors and frees allocated

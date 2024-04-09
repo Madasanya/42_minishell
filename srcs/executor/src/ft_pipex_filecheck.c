@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
+#include "../inc_priv/pipex_private.h"
 
 /**
 	@brief Checks the filetype (output) and opens file with necessar
@@ -95,7 +96,7 @@ static void	ft_redirect_type_fd_assign(t_command *cmd, t_fd *fd, \
 	}
 	else if (!(ft_strcmp(cmd->comm_table[0], "<<")) && fd_docks != NULL)
 	{
-		if ((fd->in)[0] != fd_docks[0])
+		if ((fd->in)[0] != fd_docks[0]) /*IN_HEREDOC*/
 			close((fd->in)[0]);
 		(fd->in)[0] = fd_docks[0];
 	}

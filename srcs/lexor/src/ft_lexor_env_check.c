@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../incl/minishell.h"
+#include "minishell.h"
 #include "../inc_priv/ft_lexor_private.h"
 
 /**

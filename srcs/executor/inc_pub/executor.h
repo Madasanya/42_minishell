@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parser.h                                        :+:      :+:    :+:   */
+/*   executor.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,27 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PARSER_H
-# define FT_PARSER_H
+#ifndef EXECUTOR_H
+# define EXECUTOR_H
 
-# include "../../../libft/incl/libft.h"
+/** EXECUTOR/PIPEX */
+/* ft_executor.c */
 
-# define FT_CMD_TYPE_ERROR -1
-# define FT_CMD_TYPE_SYSTEM 0
-# define FT_CMD_TYPE_BUILT_IN 1
-# define FT_CMD_TYPE_REDIRECT 2
-
-# define FT_LIST_TYPE_WORD 0
-# define FT_LIST_TYPE_COMMAND 1
-# define FT_LIST_TYPE_BUILTIN_CONTENT 2
-# define FT_LIST_TYPE_ENV_VAR 3
-
-# define PARSER_TABLE_LEN_LIMIT 1000
-# define PIPE_LIMIT 1000
-
-/** PARSER */
-/* ft_parser.c */
-
-int		ft_parser(void);
+void	ft_executor(char **envp);
 
 #endif

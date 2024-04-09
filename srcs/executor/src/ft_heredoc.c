@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
+#include "../inc_priv/heredoc_private.h"
+#include "../inc_priv/pipex_private.h"
 
 /**
 	@brief Initiates and allocates memory for  the heredoc file desriptors and

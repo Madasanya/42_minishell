@@ -16,6 +16,8 @@
 # include "../libft/incl/libft.h"
 # include "../srcs/builtin/inc_pub/ft_builtin.h"
 # include "../srcs/lexor/inc_pub/ft_lexor.h"
+# include "../srcs/parser/inc_pub/ft_parser.h"
+# include "../srcs/executor/inc_pub/executor.h"
 # include <stdio.h>
 # include <readline/readline.h>
 # include <readline/history.h>
@@ -33,23 +35,8 @@
 
 # define BUFFER_SIZE 1
 
-# define OUT_WRITE 0
-# define OUT_APPEND 1
-# define IN_READFILE 2
-# define IN_HEREDOC 3
-
 # define SYMLINK 1
 # define NOT_SYMLINK 0
-
-# define FT_LIST_TYPE_WORD 0
-# define FT_LIST_TYPE_COMMAND 1
-# define FT_LIST_TYPE_BUILTIN_CONTENT 2
-# define FT_LIST_TYPE_ENV_VAR 3
-
-# define FT_CMD_TYPE_ERROR -1
-# define FT_CMD_TYPE_SYSTEM 0
-# define FT_CMD_TYPE_BUILT_IN 1
-# define FT_CMD_TYPE_REDIRECT 2
 
 # define FT_ERROR_PIPEX_EXEC_FAIL "minishell: command execution failed"
 # define FT_ERROR_PIPEX_FD_DUP_FAIL "minishell: fd duplication failed"
@@ -113,12 +100,6 @@ typedef struct s_env_var
 
 extern t_global	g_access;
 
-typedef struct s_fd
-{
-	int	in[2];
-	int	out[2];
-}	t_fd;
-
 /** INITIATOR */
 /* ft_initiator_utils.c */
 
@@ -134,76 +115,6 @@ void	ft_initiator(char **envp, char *executable);
 /* ft_check_path_env_*.c */
 
 void	ft_check_path_env(void);
-
-/** PARSER */
-/* ft_parser.c */
-
-int		ft_parser(void);
-void	ft_add_command(int cmd_len, char **cmd_line, int index_counter);
-
-/* ft_parser_handler.c */
-
-int		ft_parser_string_handler(t_list **lex_element, \
-		char ***cmd_line, int *cmd_len, int index_counter);
-
-/* ft_parser_utils.c */
-
-char	**add_to_line(char **line, char *new_str, int *line_len);
-int		ft_parser_error_handler(t_list **parser_list, t_list **lexor_list, \
-		const char *msg);
-int		is_redirect(char *str);
-int		is_pipe(char *str);
-int		ft_command_check(char *str, char **cmd_path, int *cmd_type);
-
-/* ft_parser_path_finder.c */
-
-int		path_finder(char *str, char **cmd_path);
-
-/** EXECUTOR/PIPEX */
-/* ft_executor.c */
-
-void	ft_executor(char **envp);
-
-/* ft_heredoc.c */
-
-void	ft_heredoc_pipe_init(int **fd_docks, int fd_stream[2], int index);
-void	ft_heredoc_parent(int *fd, pid_t pid);
-void	ft_heredoc(char *stop_word, int fd_stream[2], int fd_out, \
-		char *keyword);
-void	ft_hd_ch(int *fd, int *fd_stream, char *stop_word, char *keyword);
-
-/* ft_heredoc_utils.c */
-
-void	ft_heredoc_child_free(int **fd_docks);
-void	ft_handle_sigterm_heredoc(int signum);
-void	ft_free_heredoc_fds(int **fd_docks);
-
-/* ft_pipex.c */
-
-void	ft_pipex(int fd_s[2], char **envp, int **fd_d, pid_t *pidt);
-
-/* ft_pipex_error_handling.c */
-
-void	ft_err_ch(char *error_msg, int **fd_docks, int fd_stream[2], \
-		pid_t *pidt);
-void	ft_err_par(char *error_msg, int **fd_docks, int fd_stream[2], \
-		pid_t *pidt);
-void	ft_ch_err_fl(int error_flag, int **fd_docks, \
-		int *fd_stream, pid_t *pidt);
-int		ft_fc_error_exit(int error_flag, t_fd fd);
-void	ft_pipex_child_in_out_error(int error_flag, t_fd fd);
-
-/* ft_pipex_filecheck.c */
-
-int		ft_fc(t_list **cmd_list, int i, t_fd fd, int *fd_docks);
-
-/* ft_pipex_utils.c */
-
-void	ft_pipex_iterator(int *i, t_list **cmd_list);
-void	ft_pipex_clean_child_exec(t_list *cmd_list, \
-		char **envp, pid_t *pidt, int i);
-void	ft_pipex_parent_exec(t_list **cmd_list, t_fd fd, int i, int *pidt);
-int		ft_execve(char **args, pid_t pid);
 
 /** MAIN/GLOBAL */
 /* ft_check_symlink.c */

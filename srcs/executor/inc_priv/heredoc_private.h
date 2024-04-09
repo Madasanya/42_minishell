@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parser_private.h                                :+:      :+:    :+:   */
+/*   heredoc_private.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,35 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PARSER_PRIVATE_H
-# define FT_PARSER_PRIVATE_H
+#ifndef HEREDOC_PRIVATE_H
+# define HEREDOC_PRIVATE_H
 
 # include "../../../libft/incl/libft.h"
+# include <sys/types.h>
 
-# define PARSER_TABLE_LEN_LIMIT 1000
-# define PIPE_LIMIT 1000
+/** EXECUTOR/PIPEX */
 
-/** PARSER */
-/* ft_parser.c */
+/* ft_heredoc.c */
 
-void	ft_add_command(int cmd_len, char **cmd_line, int index_counter);
+void	ft_heredoc_pipe_init(int **fd_docks, int fd_stream[2], int index);
+void	ft_heredoc_parent(int *fd, pid_t pid);
+void	ft_heredoc(char *stop_word, int fd_stream[2], int fd_out, \
+		char *keyword);
+void	ft_hd_ch(int *fd, int *fd_stream, char *stop_word, char *keyword);
 
-/* ft_parser_handler.c */
+/* ft_heredoc_utils.c */
 
-int		ft_parser_string_handler(t_list **lex_element, \
-		char ***cmd_line, int *cmd_len, int index_counter);
-
-/* ft_parser_utils.c */
-
-char	**add_to_line(char **line, char *new_str, int *line_len);
-int		ft_parser_error_handler(t_list **parser_list, t_list **lexor_list, \
-		const char *msg);
-int		is_redirect(char *str);
-int		is_pipe(char *str);
-int		ft_command_check(char *str, char **cmd_path, int *cmd_type);
-
-/* ft_parser_path_finder.c */
-
-int		path_finder(char *str, char **cmd_path);
+void	ft_heredoc_child_free(int **fd_docks);
+void	ft_handle_sigterm_heredoc(int signum);
+void	ft_free_heredoc_fds(int **fd_docks);
 
 #endif

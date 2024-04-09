@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
+#include "../inc_priv/heredoc_private.h"
 
 /**
 	@brief Frees heredoc filedesriptors and global variables and 
