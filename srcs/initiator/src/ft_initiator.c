@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "../../../incl/minishell.h"
+#include "../inc_priv/ft_initiator_private.h"
+#include "../../builtin/inc_pub/ft_builtin.h"
 
 /**
 	 @brief Initiates all necessary variables for running the minishell.
@@ -30,7 +32,7 @@ void	ft_initiator(char **envp, char *executable)
 	ft_check_pwd_env();
 	ft_update_shell_env(executable);
 	ft_check_path_env();
-	ft_init_builtins();
+	ft_builtin_init();
 	g_access.lexor2parser = NULL;
 	g_access.parser2exec = NULL;
 	g_access.read_line2lexor = NULL;

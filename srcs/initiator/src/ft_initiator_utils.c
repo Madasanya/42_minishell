@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "minishell.h"
+# include "../../../libft/incl/libft.h"
 
 /**
 	 @brief Handling SHELL in copied list. Updated to path to exe of minishell.
@@ -37,44 +38,6 @@ void	ft_update_shell_env(char *executable)
 	env_var->name = ft_strdup("SHELL=");
 	ft_rtoa_path(executable, &(env_var->value));
 	ft_lstadd_back(&(g_access.env), ft_lstnew(env_var));
-}
-
-/**
-	@brief Adds a buildin to linked list.
-	@return Pointer to content element that can be added to buildin list.
-*/
-static t_builtin_content	*ft_init_builtin_content(char *cmd, \
-	int (*minishell_fct)(char **args, pid_t pid), int i)
-{
-	t_builtin_content	*content;
-
-	content = ft_calloc(sizeof(t_builtin_content), 1);
-	content->cmd = cmd;
-	content->minishell_fct = minishell_fct;
-	content->index = i;
-	return (content);
-}
-
-/**
-	@brief Builds linked list with all builtins.
-	@return None.
-*/
-void	ft_init_builtins(void)
-{
-	ft_lstadd_back(&(g_access.builtins), \
-		ft_lstnew(ft_init_builtin_content("echo", minishell_echo, 0)));
-	ft_lstadd_back(&(g_access.builtins), \
-		ft_lstnew(ft_init_builtin_content("cd", minishell_cd, 1)));
-	ft_lstadd_back(&(g_access.builtins), \
-		ft_lstnew(ft_init_builtin_content("pwd", minishell_pwd, 2)));
-	ft_lstadd_back(&(g_access.builtins), \
-		ft_lstnew(ft_init_builtin_content("export", minishell_export, 3)));
-	ft_lstadd_back(&(g_access.builtins), \
-		ft_lstnew(ft_init_builtin_content("unset", minishell_unset, 4)));
-	ft_lstadd_back(&(g_access.builtins), \
-		ft_lstnew(ft_init_builtin_content("env", minishell_env, 5)));
-	ft_lstadd_back(&(g_access.builtins), \
-		ft_lstnew(ft_init_builtin_content("exit", minishell_exit, 6)));
 }
 
 /**

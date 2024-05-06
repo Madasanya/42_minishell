@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_builtin.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maggi <maggi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 14:35:01 by mamuller          #+#    #+#             */
-/*   Updated: 2024/03/20 21:40:19 by maggi            ###   ########.fr       */
+/*   Updated: 2024/05/06 20:12:07 by mamuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ int		minishell_exit(char **args, pid_t pid);
 /* ft_builtin_export.c */
 
 int		minishell_export(char **args, pid_t pid);
+
+/* ft_builtin_init.c */
+
+void	ft_builtin_init(void);
 
 /* ft_builtin_pwd.c */
 
