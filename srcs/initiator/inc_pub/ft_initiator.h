@@ -17,5 +17,6 @@
 /* ft_initiator.c */
 
 void	ft_initiator(char **envp, char *executable);
+void	ft_signal_setup(void);
 
 #endif

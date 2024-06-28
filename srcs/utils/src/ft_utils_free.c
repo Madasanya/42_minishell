@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_linked_list.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbanfi <dbanfi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 13:32:17 by dbanfi            #+#    #+#             */
-/*   Updated: 2022/02/26 21:49:55 by dbanfi           ###   ########.fr       */
+/*   Updated: 2024/06/29 00:58:33 by mamuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,4 +103,29 @@ int	ft_free_linked_list(t_list **lst, int type, int full)
 		*lst = NULL;
 	}
 	return (0);
+}
+
+/**
+	@brief Frees globly used variables. Frees global structute g_access
+		and readline history.
+	@return None.
+	@exception Insert "rl_clear_history();" on line 38 to free readline
+		history works only with linux readline libraries.
+*/
+void	free_global(void)
+{
+	if (g_access.env)
+		ft_free_linked_list(&(g_access.env), FT_LIST_TYPE_ENV_VAR, 1);
+	if (g_access.builtins)
+		ft_free_linked_list(&(g_access.builtins), \
+			FT_LIST_TYPE_BUILTIN_CONTENT, 1);
+	ft_smart_free((void **)&g_access.last_return);
+	if (g_access.lexor2parser)
+		ft_free_linked_list(&(g_access.lexor2parser), FT_LIST_TYPE_WORD, 1);
+	if (g_access.parser2exec)
+		ft_free_linked_list(&(g_access.parser2exec), FT_LIST_TYPE_COMMAND, 1);
+	ft_smart_free((void **)&g_access.read_line2lexor);
+	ft_smart_free((void **)&g_access.home);
+	ft_smart_free((void **)&g_access.pwd);
+	ft_smart_free((void **)&g_access.dp);
 }

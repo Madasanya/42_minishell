@@ -10,9 +10,39 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/minishell.h"
+#include "minishell.h"
+#include <stdlib.h>
 
-void	ft_memmove_till_newline(char *l_to_m)
+static char	*ft_strjoin_gnl(char *s1, char *s2, int j)
+{
+	char	*return_s;
+	int		len_s1;
+	int		len_s2[2];
+	int		i;
+
+	i = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	len_s1 = ft_strlen(s1);
+	len_s2[0] = ft_strlen(s2);
+	len_s2[1] = len_s2[0] - (ft_strchr(s2, '\0') - ft_strchr(s2, '\n'));
+	return_s = malloc(sizeof(char) * (len_s1 + len_s2[j] + 1) + 1);
+	if (return_s == NULL)
+		return (NULL);
+	while (i < len_s1 + len_s2[j] + 1)
+	{
+		if (i < len_s1)
+			return_s[i] = s1[i];
+		else
+			return_s[i] = s2[i - len_s1];
+		i++;
+	}
+	return_s[(len_s1 + len_s2[j] + 1)] = '\0';
+	free(s1);
+	return (return_s);
+}
+
+static void	ft_memmove_till_newline(char *l_to_m)
 {
 	int	i;
 	int	len;
@@ -32,7 +62,7 @@ void	ft_memmove_till_newline(char *l_to_m)
 	ft_bzero((l_to_m) + len, i + 1);
 }
 
-int	ft_return_prep(int bytes, char **tmp, char **line, int fd)
+static int	ft_return_prep(int bytes, char **tmp, char **line, int fd)
 {
 	if (bytes > 0)
 		return (1);
@@ -48,7 +78,7 @@ int	ft_return_prep(int bytes, char **tmp, char **line, int fd)
 	}
 }
 
-int	ft_check_array_input(char **tmp, char **line, char *buffer, int fd)
+static int	ft_check_array_input(char **tmp, char **line, char *buffer, int fd)
 {
 	int	bytes;
 
@@ -76,7 +106,7 @@ int	ft_check_array_input(char **tmp, char **line, char *buffer, int fd)
 	return (bytes);
 }
 
-int	get_next_line_prev(int fd, char **line)
+static int	get_next_line_prev(int fd, char **line)
 {
 	int			bytes;
 	static char	buffer[BUFFER_SIZE + 1];

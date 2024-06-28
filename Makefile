@@ -11,22 +11,22 @@ ifeq ($(UNAME), Linux)
 
 SRC			=	builtin/src/ft_builtin_cd.c builtin/src/ft_builtin_echo.c builtin/src/ft_builtin_env.c builtin/src/ft_builtin_exit.c builtin/src/ft_builtin_exit_utils.c builtin/src/ft_builtin_export.c \
 				builtin/src/ft_builtin_export_utils.c builtin/src/ft_builtin_init.c builtin/src/ft_builtin_pwd.c builtin/src/ft_builtin_unset.c builtin/src/ft_builtin_utils.c builtin/src/ft_builtin_env_utils.c \
-				ft_check_path_env_linux.c ft_check_symlink.c lexor/src/ft_lexor_env_check.c executor/src/ft_executor.c ft_free_linked_list.c \
-				ft_globlal_fun.c executor/src/ft_heredoc.c executor/src/ft_heredoc_utils.c initiator/src/ft_initiator_utils.c initiator/src/ft_initiator.c lexor/src/ft_lexor.c lexor/src/ft_lexor_handlers.c \
+				utils/src/ft_check_path_env_linux.c utils/src/ft_check_symlink.c lexor/src/ft_lexor_env_check.c executor/src/ft_executor.c utils/src/ft_utils_free.c \
+				executor/src/ft_heredoc.c executor/src/ft_heredoc_utils.c initiator/src/ft_initiator_utils.c initiator/src/ft_initiator.c lexor/src/ft_lexor.c lexor/src/ft_lexor_handlers.c \
 				lexor/src/ft_lexor_utils.c lexor/src/ft_lexor_utils2.c parser/src/ft_parser.c parser/src/ft_parser_handler.c parser/src/ft_parser_utils.c parser/src/ft_parser_path_finder.c executor/src/ft_pipex.c \
-				executor/src/ft_pipex_error_handling.c executor/src/ft_pipex_filecheck.c executor/src/ft_pipex_utils.c ft_rtoa_path.c ft_signal_handler.c ft_utils.c \
-				ft_utils_join.c ft_utils_num.c get_next_line.c get_next_line_utils.c main.c
+				executor/src/ft_pipex_error_handling.c executor/src/ft_pipex_filecheck.c executor/src/ft_pipex_utils.c utils/src/ft_rtoa_path.c initiator/src/ft_signal_handler.c utils/src/ft_utils.c \
+				utils/src/ft_utils_join.c utils/src/ft_utils_num.c utils/src/get_next_line.c main.c
 
 endif
 
 ifeq ($(UNAME), Darwin)
 SRC			=	builtin/src/ft_builtin_cd.c builtin/src/ft_builtin_echo.c builtin/src/ft_builtin_env.c builtin/src/ft_builtin_exit.c builtin/src/ft_builtin_exit_utils.c builtin/src/ft_builtin_export.c \
 				builtin/src/ft_builtin_export_utils.c builtin/src/ft_builtin_init.c builtin/src/ft_builtin_pwd.c builtin/src/ft_builtin_unset.c builtin/src/ft_builtin_utils.c builtin/src/ft_builtin_utils_env.c \
-				ft_check_path_env_mac.c ft_check_symlink.c lexor/src/ft_lexor_env_check.c executor/src/ft_executor.c ft_free_linked_list.c\
-				ft_globlal_fun.c executor/src/ft_heredoc.c executor/src/ft_heredoc_utils.c initiator/src/ft_initiator_utils.c initiator/src/ft_initiator.c lexor/src/ft_lexor.c lexor/src/ft_lexor_handlers.c \
+				utils/src/ft_check_path_env_mac.c utils/src/ft_check_symlink.c lexor/src/ft_lexor_env_check.c executor/src/ft_executor.c utils/src/ft_utils_free.c\
+				executor/src/ft_heredoc.c executor/src/ft_heredoc_utils.c initiator/src/ft_initiator_utils.c initiator/src/ft_initiator.c lexor/src/ft_lexor.c lexor/src/ft_lexor_handlers.c \
 				lexor/src/ft_lexor_utils.c lexor/src/ft_lexor_utils2.c parser/src/ft_parser.c parser/src/ft_parser_handler.c parser/src/ft_parser_utils.c parser/src/ft_parser_path_finder.c executor/src/ft_pipex.c \
-				executor/src/ft_pipex_error_handling.c executor/src/ft_pipex_filecheck.c executor/src/ft_pipex_utils.c ft_rtoa_path.c ft_signal_handler.c ft_utils.c \
-				ft_utils_join.c ft_utils_num.c get_next_line.c get_next_line_utils.c main.c
+				executor/src/ft_pipex_error_handling.c executor/src/ft_pipex_filecheck.c executor/src/ft_pipex_utils.c utils/src/ft_rtoa_path.c initiator/src/ft_signal_handler.c utils/src/ft_utils.c \
+				utils/src/ft_utils_join.c utils/src/ft_utils_num.c utils/src/get_next_line.c main.c
 endif
 
 
@@ -60,6 +60,7 @@ $(OBJD)%.o: $(SRCD)%.c
 	@mkdir -p $(OBJD)/parser/src
 	@mkdir -p $(OBJD)/executor/src
 	@mkdir -p $(OBJD)/initiator/src
+	@mkdir -p $(OBJD)/utils/src
 	$(CC) $(CFLAGS) -I ${HEADD} -c -o $@ $<
 
 # $(NAME):	${OBJF}
@@ -83,7 +84,6 @@ fclean:		clean
 			${RM} ${NAME}
 			${RM} ${LIBFTD}${LIBFTL}
 			@${RM} ${HEADD}minishell.h.gch
-			@${RM} ${HEADD}minishe11.h.gch
 			@rm -rf minishell.dSYM
 
 re:			fclean all

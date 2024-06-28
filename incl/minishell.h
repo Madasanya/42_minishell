@@ -155,19 +155,6 @@ char	*ft_strjoin_with_scnd_free(char *s1, char *s2);
 
 int		ft_digit_check(char *argv);
 int		ft_atoll(const char *str, long long int *out);
-int		ft_check_array_input(char **tmp, char **line, char *buffer, int fd);
-int		get_next_line_prev(int fd, char **line);
 char	*get_next_line(int fd);
-
-/* get_next_line.c */
-
-void	ft_memmove_till_newline(char *l_to_m);
-int		ft_return_prep(int bytes, char **tmp, char **line, int fd);
-
-/* get_next_line_utils.c */
-
-char	*ft_strchr_gnl(const char *s, int c);
-size_t	ft_strlen_gnl(char *s);
-char	*ft_strjoin_gnl(char *s1, char *s2, int j);
 
 #endif
