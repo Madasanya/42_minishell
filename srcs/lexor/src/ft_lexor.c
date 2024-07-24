@@ -12,6 +12,8 @@
 
 #include "../../../incl/minishell.h"
 #include "../inc_priv/ft_lexor_private.h"
+#include "../../parser/inc_pub/ft_parser.h"
+#include "../../utils/inc_pub/ft_utils.h"
 
 /**
 	 @brief Checks for single and double quotes.

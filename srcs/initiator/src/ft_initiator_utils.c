@@ -11,7 +11,9 @@
 /* ************************************************************************** */
 
 #include "minishell.h"
-# include "../../../libft/incl/libft.h"
+#include "../../../libft/incl/libft.h"
+#include "../../builtin/inc_pub/ft_builtin.h"
+#include "../../utils/inc_pub/ft_utils.h"
 
 /**
 	 @brief Handling SHELL in copied list. Updated to path to exe of minishell.

@@ -13,6 +13,9 @@
 #include "../../../incl/minishell.h"
 #include "../inc_priv/heredoc_private.h"
 #include "../inc_priv/pipex_private.h"
+#include "../../utils/inc_pub/ft_utils.h"
+# include <sys/wait.h>
+# include <readline/readline.h>
 
 /**
 	@brief Initiates and allocates memory for  the heredoc file desriptors and

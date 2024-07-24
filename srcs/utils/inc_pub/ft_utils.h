@@ -6,7 +6,7 @@
 /*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 00:10:33 by mamuller          #+#    #+#             */
-/*   Updated: 2024/06/29 01:08:07 by mamuller         ###   ########.fr       */
+/*   Updated: 2024/07/25 00:27:50 by mamuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	ft_rtoa_path(char *rel_path, char **abs_path);
 
 void	del_env_var(void *tmp);
 int	    ft_free_linked_list(t_list **lst, int type, int full);
+void	free_global(void);
 
 /* ft_utils_join.c */
 
@@ -46,6 +47,10 @@ int	ft_atoll(const char *str, long long int *out);
 /* ft_utils.c */
 
 int	ft_strcmp(char *s1, char *s2);
+void ft_set_global_pwd(char **env);
+void ft_smart_free(void **ptr);
+void	ft_free_split(char **split);
+
 
 /* get_next_line.c */
 

@@ -6,12 +6,13 @@
 /*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 20:07:49 by mamuller          #+#    #+#             */
-/*   Updated: 2024/05/06 20:10:48 by mamuller         ###   ########.fr       */
+/*   Updated: 2024/07/24 23:06:46 by mamuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/minishell.h"
 #include "../inc_priv/ft_builtin_private.h"
+# include "../inc_pub/ft_builtin.h"
 
 /**
 	@brief Adds a buildin to linked list.

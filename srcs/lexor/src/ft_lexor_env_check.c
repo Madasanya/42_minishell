@@ -12,6 +12,7 @@
 
 #include "minishell.h"
 #include "../inc_priv/ft_lexor_private.h"
+#include "../../utils/inc_pub/ft_utils.h"
 
 /**
 	 @brief Loops through the env list and searches for the respective value

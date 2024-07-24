@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_builtin_unset.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbanfi <dbanfi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 12:24:34 by dbanfi            #+#    #+#             */
-/*   Updated: 2022/02/27 12:34:19 by dbanfi           ###   ########.fr       */
+/*   Updated: 2024/07/25 00:05:20 by mamuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/minishell.h"
 #include "../inc_priv/ft_builtin_private.h"
+#include "../../utils/inc_pub/ft_utils.h"
 
 /**
 	@brief Removes env var if it is the first node

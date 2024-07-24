@@ -12,6 +12,8 @@
 
 #include "../../../incl/minishell.h"
 #include "../inc_priv/pipex_private.h"
+#include "../../parser/inc_pub/ft_parser.h"
+#include "../../utils/inc_pub/ft_utils.h"
 
 /**
 	@brief Increments the necessary values for looping through 

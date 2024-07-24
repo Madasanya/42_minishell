@@ -12,6 +12,7 @@
 
 #include "../../../incl/minishell.h"
 #include "../inc_priv/ft_builtin_private.h"
+#include "../../utils/inc_pub/ft_utils.h"
 
 /**
 	@brief Handels exit function called in pipeline. Errors are not printed.

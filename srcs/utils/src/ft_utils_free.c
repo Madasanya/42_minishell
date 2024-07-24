@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_linked_list.c                              :+:      :+:    :+:   */
+/*   ft_utils_free.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 13:32:17 by dbanfi            #+#    #+#             */
-/*   Updated: 2024/06/29 00:58:33 by mamuller         ###   ########.fr       */
+/*   Updated: 2024/07/25 00:26:54 by mamuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/minishell.h"
+#include "../../parser/inc_pub/ft_parser.h"
+#include "../inc_pub/ft_utils.h"
 
 /**
 	@brief Del function for ft_lstclear() in case of content structure

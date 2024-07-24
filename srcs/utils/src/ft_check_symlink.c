@@ -6,11 +6,14 @@
 /*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:12:48 by dbanfi            #+#    #+#             */
-/*   Updated: 2022/02/26 21:37:29 by mamuller         ###   ########.fr       */
+/*   Updated: 2024/07/25 00:26:14 by mamuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/minishell.h"
+#include "../inc_pub/ft_utils.h"
+#include <sys/stat.h>
+#include <stdio.h>
 
 /**
 	 @brief Function to find the next subdirectory in a path string.

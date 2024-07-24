@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../../incl/minishell.h"
+#include "../../utils/inc_pub/ft_utils.h"
 
 /**
 	@brief Prints error message according to input. Exits with exit_value.

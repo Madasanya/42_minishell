@@ -14,7 +14,6 @@
 # define HEREDOC_PRIVATE_H
 
 # include "../../../libft/incl/libft.h"
-# include <sys/types.h>
 
 /** EXECUTOR/PIPEX */
 

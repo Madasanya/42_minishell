@@ -11,6 +11,14 @@
 /* ************************************************************************** */
 
 #include "../incl/minishell.h"
+#include "./executor/inc_pub/ft_executor.h"
+#include "./initiator/inc_pub/ft_initiator.h"
+#include "./lexor/inc_pub/ft_lexor.h"
+#include "./parser/inc_pub/ft_parser.h"
+#include "./utils/inc_pub/ft_utils.h"
+
+#include <readline/readline.h>
+#include <readline/history.h>
 
 t_global	g_access;
 

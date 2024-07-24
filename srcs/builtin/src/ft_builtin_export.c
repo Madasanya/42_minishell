@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_builtin_export.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbanfi <dbanfi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 12:24:34 by dbanfi            #+#    #+#             */
-/*   Updated: 2022/02/27 12:32:06 by dbanfi           ###   ########.fr       */
+/*   Updated: 2024/07/25 00:04:57 by mamuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/minishell.h"
 #include "../inc_priv/ft_builtin_private.h"
+#include "../../parser/inc_pub/ft_parser.h"
+#include "../../utils/inc_pub/ft_utils.h"
 
 /**
 	@brief Handels sorting and printing content of env var list.

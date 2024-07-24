@@ -13,6 +13,8 @@
 #include "../../../incl/minishell.h"
 #include "../inc_priv/heredoc_private.h"
 #include "../inc_priv/pipex_private.h"
+#include "../../utils/inc_pub/ft_utils.h"
+#include <stdio.h>
 
 /**
 	@brief Error handler that closes file desriptors and frees allocated

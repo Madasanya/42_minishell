@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "../incl/minishell.h"
+#include "../../utils/inc_pub/ft_utils.h"
+# include <fcntl.h>
 
 /**
 	 @brief Creates or updates PATH to found value.

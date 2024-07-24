@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../incl/minishell.h"
+#include "../../utils/inc_pub/ft_utils.h"
 
 /**
 	@brief Handels absolute path value inside relative path and

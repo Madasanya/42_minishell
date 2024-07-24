@@ -13,6 +13,7 @@
 #include "../../../incl/minishell.h"
 #include "../inc_priv/ft_initiator_private.h"
 #include "../../builtin/inc_pub/ft_builtin.h"
+#include "../../utils/inc_pub/ft_utils.h"
 
 /**
 	 @brief Initiates all necessary variables for running the minishell.

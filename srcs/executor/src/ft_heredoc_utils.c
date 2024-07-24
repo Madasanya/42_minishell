@@ -12,6 +12,8 @@
 
 #include "../../../incl/minishell.h"
 #include "../inc_priv/heredoc_private.h"
+#include "../../utils/inc_pub/ft_utils.h"
+# include <sys/wait.h>
 
 /**
 	@brief Frees heredoc filedesriptors and global variables and 

@@ -6,11 +6,13 @@
 /*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 15:24:38 by dbanfi            #+#    #+#             */
-/*   Updated: 2022/02/28 13:44:42 by mamuller         ###   ########.fr       */
+/*   Updated: 2024/07/24 22:38:36 by mamuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/minishell.h"
+# include <sys/wait.h>
+# include <readline/readline.h>
 
 /**
 	@brief Makes new readline input line and delets input from last line

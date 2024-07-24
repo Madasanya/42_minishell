@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../../incl/minishell.h"
+#include "../../utils/inc_pub/ft_utils.h"
 
 /**
 	@brief Puts copied node in correct place in copied env var list. 

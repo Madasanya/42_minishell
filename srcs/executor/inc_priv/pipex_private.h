@@ -14,7 +14,6 @@
 # define PIPEX_PRIVATE_H
 
 # include "../../../libft/incl/libft.h"
-# include <sys/types.h>
 
 
 # define OUT_WRITE 0
@@ -29,9 +28,6 @@ typedef struct s_fd
 }	t_fd;
 
 /** EXECUTOR/PIPEX */
-/* ft_executor.c */
-
-void	ft_executor(char **envp);
 
 /* ft_pipex.c */
 

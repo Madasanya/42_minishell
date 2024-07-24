@@ -6,12 +6,14 @@
 /*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 21:57:05 by mamuller          #+#    #+#             */
-/*   Updated: 2024/04/24 20:15:39 by mamuller         ###   ########.fr       */
+/*   Updated: 2024/07/25 00:06:14 by mamuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/minishell.h"
 #include "../inc_priv/ft_parser_private.h"
+#include "../inc_pub/ft_parser.h"
+#include "../../utils/inc_pub/ft_utils.h"
 
 /**
 	@brief Adds new detected command to liked list that will be executed later.

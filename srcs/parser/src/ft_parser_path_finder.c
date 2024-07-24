@@ -6,11 +6,14 @@
 /*   By: mamuller <mamuller@student.42wolfsburg>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 21:57:51 by mamuller          #+#    #+#             */
-/*   Updated: 2024/04/24 20:15:32 by mamuller         ###   ########.fr       */
+/*   Updated: 2024/07/25 00:29:12 by mamuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/minishell.h"
+#include "../../builtin/inc_pub/ft_builtin.h"
+#include "../../utils/inc_pub/ft_utils.h"
+#include <errno.h>
 
 /**
 	@brief Checks if the combination of path and executable is accessible

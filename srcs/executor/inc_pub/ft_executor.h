@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EXECUTOR_H
-# define EXECUTOR_H
+#ifndef FT_EXECUTOR_H
+# define FT_EXECUTOR_H
 
 /** EXECUTOR/PIPEX */
 /* ft_executor.c */

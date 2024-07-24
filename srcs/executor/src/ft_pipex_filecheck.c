@@ -12,6 +12,9 @@
 
 #include "../../../incl/minishell.h"
 #include "../inc_priv/pipex_private.h"
+#include "../../parser/inc_pub/ft_parser.h"
+#include "../../utils/inc_pub/ft_utils.h"
+#include <fcntl.h>
 
 /**
 	@brief Checks the filetype (output) and opens file with necessar
